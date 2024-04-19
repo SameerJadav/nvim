@@ -263,6 +263,7 @@ require("lazy").setup({
 				lua = { "stylua" },
 				javascript = { { "prettierd", "prettier" } },
 				typescript = { { "prettierd", "prettier" } },
+				markdown = { { "prettierd", "prettier" } },
 			},
 			format_on_save = {
 				lsp_fallback = true,
