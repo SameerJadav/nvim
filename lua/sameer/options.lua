@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.g.have_nerd_font = true
 
 vim.opt.clipboard = "unnamedplus"
 
@@ -32,6 +33,8 @@ vim.opt.termguicolors = true
 
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
+
+vim.opt.showmode = false
 
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
