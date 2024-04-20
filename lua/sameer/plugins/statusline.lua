@@ -2,9 +2,17 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	opts = {
-		icons_enabled = false,
-		theme = "onedark",
-		component_separators = "|",
+		icons_enabled = true,
+		theme = "auto",
+		sections = {
+			lualine_a = { "mode" },
+			lualine_b = { "branch", "diagnostics" },
+			lualine_c = { "filename" },
+			lualine_x = { "diff" },
+			lualine_y = { "progress" },
+			lualine_z = { "location" },
+		},
 		section_separators = "",
+		component_separators = "",
 	},
 }
