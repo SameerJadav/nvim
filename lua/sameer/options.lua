@@ -31,8 +31,7 @@ vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
 
-vim.opt.updatetime = 250
-vim.opt.timeoutlen = 300
+vim.opt.updatetime = 50
 
 vim.opt.showmode = false
 

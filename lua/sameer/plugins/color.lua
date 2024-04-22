@@ -1,10 +1,14 @@
 return {
-	"folke/tokyonight.nvim",
+	"olimorris/onedarkpro.nvim",
 	lazy = false,
 	priority = 1000,
-	opts = { style = "night", transparent = true },
 	init = function()
-		vim.cmd.colorschem("tokyonight-night")
-		vim.cmd.hi("Comment gui=none")
+		vim.cmd.colorschem("onedark_dark")
 	end,
+	opts = {
+		options = {
+			transparency = true,
+			cursorline = true,
+		},
+	},
 }
