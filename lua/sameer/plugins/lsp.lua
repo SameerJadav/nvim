@@ -54,9 +54,21 @@ return {
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 		local servers = {
-			gopls = {},
+			gopls = {
+				settings = {
+					gopls = {
+						staticcheck = true,
+						gofumpt = true,
+					},
+				},
+			},
 			lua_ls = {},
+			tsserver = {},
+			marksman = {},
 		}
+
+		local ensure_installed = vim.tbl_keys(servers or {})
+		vim.list_extend(ensure_installed, { "stylua", "gofumpt", "goimports", "prettier", "prettiered" })
 
 		require("mason").setup({
 			ui = {
@@ -69,6 +81,7 @@ return {
 		})
 
 		require("mason-tool-installer").setup({ ensure_installed = servers })
+
 		require("mason-lspconfig").setup({
 			handlers = {
 				function(server_name)
