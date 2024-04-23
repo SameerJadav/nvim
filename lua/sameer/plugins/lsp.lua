@@ -68,7 +68,7 @@ return {
 		}
 
 		local ensure_installed = vim.tbl_keys(servers or {})
-		vim.list_extend(ensure_installed, { "stylua", "gofumpt", "goimports", "prettier", "prettiered" })
+		vim.list_extend(ensure_installed, { "stylua", "gofumpt", "goimports", "prettier", "prettierd" })
 
 		require("mason").setup({
 			ui = {
@@ -80,7 +80,7 @@ return {
 			},
 		})
 
-		require("mason-tool-installer").setup({ ensure_installed = servers })
+		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 		require("mason-lspconfig").setup({
 			handlers = {

@@ -15,6 +15,7 @@ return {
 		vim.keymap.set("n", "<leader>sb", builtin.buffers, {})
 		vim.keymap.set("n", "<leader>sh", builtin.help_tags, {})
 		vim.keymap.set("n", "<leader>gs", builtin.grep_string, {})
+		vim.keymap.set("n", "<leader>sk", builtin.keymaps, {})
 		vim.keymap.set("n", "<leader>df", builtin.current_buffer_fuzzy_find, {})
 		vim.keymap.set("n", "<leader>wf", builtin.live_grep, {})
 	end,
