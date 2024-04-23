@@ -3,7 +3,7 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	opts = {
 		icons_enabled = true,
-		theme = "auto",
+		theme = "tokyonight",
 		sections = {
 			lualine_a = { "mode" },
 			lualine_b = { "branch", "diagnostics" },
