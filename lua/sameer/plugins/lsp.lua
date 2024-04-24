@@ -59,11 +59,17 @@ return {
 					gopls = {
 						staticcheck = true,
 						gofumpt = true,
+						semanticTokens = true,
+						vulncheck = "Imports",
+					},
+					codelenses = {
+						run_govulncheck = true,
 					},
 				},
 			},
 			lua_ls = {},
 			tsserver = {},
+			eslint = {},
 			marksman = {},
 		}
 
