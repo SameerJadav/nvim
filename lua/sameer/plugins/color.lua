@@ -7,6 +7,5 @@ return {
 	end,
 	opts = {
 		style = "night",
-		transparent = true,
 	},
 }
