@@ -62,6 +62,10 @@ return {
 						semanticTokens = true,
 						vulncheck = "Imports",
 					},
+					analyses = {
+						shadow = true,
+						unusedvariable = true,
+					},
 					codelenses = {
 						run_govulncheck = true,
 					},
