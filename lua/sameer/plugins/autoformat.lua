@@ -5,10 +5,10 @@ return {
 		formatters_by_ft = {
 			go = { "goimports", "gofumpt" },
 			lua = { "stylua" },
-			javascript = { { "prettierd", "prettier" } },
-			typescript = { { "prettierd", "prettier" } },
-			markdown = { { "prettierd", "prettier" } },
-			json = { { "prettierd", "prettier" } },
+			javascript = { "prettier" },
+			typescript = { "prettier" },
+			markdown = { "prettier" },
+			json = { "prettier" },
 		},
 		format_on_save = {
 			lsp_fallback = true,
