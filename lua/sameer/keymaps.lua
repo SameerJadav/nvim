@@ -14,8 +14,6 @@ vim.keymap.set("n", "<leader>w", ":w<cr>")
 vim.keymap.set("n", "<leader>q", ":q<cr>")
 vim.keymap.set("n", "<leader>x", ":wq<cr>")
 
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
-
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 
@@ -30,8 +28,8 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-	group = vim.api.nvim_create_augroup("HighlightYank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+    group = vim.api.nvim_create_augroup("HighlightYank", { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
 })

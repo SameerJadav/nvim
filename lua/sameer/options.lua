@@ -33,8 +33,6 @@ vim.opt.termguicolors = true
 
 vim.opt.updatetime = 250
 
-vim.opt.colorcolumn = "80"
-
 vim.opt.showmode = false
 
 vim.g.netrw_browse_split = 0
