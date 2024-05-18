@@ -17,13 +17,6 @@ return {
 				"vim",
 				"vimdoc",
 			},
-			autotag = {
-				enable = true,
-				enable_rename = true,
-				enable_close = true,
-				enable_close_on_slash = true,
-				filetypes = { "html", "markdown", "typescriptreact", "javascriptreact", "astro" },
-			},
 			sync_install = false,
 			highlight = { enable = true },
 			indent = { enable = true },
