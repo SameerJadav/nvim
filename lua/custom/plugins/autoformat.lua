@@ -1,6 +1,11 @@
 return {
 	"stevearc/conform.nvim",
-	lazy = true,
+	event = { "BufWritePre" },
+	cmd = { "ConformInfo" },
+	init = function()
+		-- If you want the formatexpr, here is the place to set it
+		vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+	end,
 	keys = {
 		{
 			"==",
@@ -13,7 +18,7 @@ return {
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {
-				go = { "goimports", "gofumpt" },
+				go = { "gofumpt", "goimports" },
 				lua = { "stylua" },
 				javascript = { "prettier" },
 				javascriptreact = { "prettier" },
@@ -22,19 +27,12 @@ return {
 				markdown = { "prettier" },
 				json = { "prettier" },
 			},
-			format_on_save = {
-				lsp_fallback = true,
-				timeout_ms = 500,
-			},
 		})
 
 		vim.api.nvim_create_autocmd("BufWritePre", {
+			pattern = "*",
 			callback = function(args)
-				require("conform").format({
-					bufnr = args.buf,
-					lsp_fallback = true,
-					quiet = true,
-				})
+				require("conform").format({ bufnr = args.buf, lsp_fallback = true, timeout_ms = 500 })
 			end,
 		})
 	end,

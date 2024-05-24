@@ -11,7 +11,7 @@ return {
 			"saadparwaiz1/cmp_luasnip",
 		},
 		config = function()
-			vim.opt.completeopt = { "menu", "menuone", "noselect" }
+			vim.opt.completeopt = { "menu", "menuone", "noselect", "noinsert", "popup" }
 
 			local cmp = require("cmp")
 			local defaults = require("cmp.config.default")()

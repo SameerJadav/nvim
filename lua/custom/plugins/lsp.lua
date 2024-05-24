@@ -8,8 +8,6 @@ return {
 
 			{ "j-hui/fidget.nvim", opts = {} },
 			{ "folke/neodev.nvim", opts = {} },
-
-			"b0o/SchemaStore.nvim",
 		},
 		config = function()
 			local capabilities = nil
@@ -23,13 +21,11 @@ return {
 				lua_ls = true,
 				tsserver = true,
 				bashls = true,
-				eslint = true,
 				marksman = true,
-				tailwindcss = true,
-
 				gopls = {
 					settings = {
 						gopls = {
+							usePlaceholders = true,
 							staticcheck = true,
 							gofumpt = true,
 							semanticTokens = true,
@@ -41,27 +37,6 @@ return {
 						},
 						codelenses = {
 							run_govulncheck = true,
-						},
-					},
-				},
-
-				jsonls = {
-					settings = {
-						json = {
-							schemas = require("schemastore").json.schemas(),
-							validate = { enable = true },
-						},
-					},
-				},
-
-				yamlls = {
-					settings = {
-						yaml = {
-							schemaStore = {
-								enable = false,
-								url = "",
-							},
-							schemas = require("schemastore").yaml.schemas(),
 						},
 					},
 				},
