@@ -3,9 +3,17 @@ return {
 	lazy = false,
 	priority = 1000,
 	config = function()
-		vim.cmd.colorschem("tokyonight-night")
 		require("tokyonight").setup({
 			style = "night",
+			styles = {
+				comments = {},
+				keywords = {},
+				functions = {},
+				variables = {},
+				sidebars = "dark",
+				floats = "dark",
+			},
 		})
+		vim.cmd.colorschem("tokyonight-night")
 	end,
 }
