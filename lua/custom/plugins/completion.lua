@@ -6,6 +6,7 @@ return {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-cmdline",
 
 			{ "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
 			"saadparwaiz1/cmp_luasnip",
@@ -15,6 +16,7 @@ return {
 
 			local cmp = require("cmp")
 			local defaults = require("cmp.config.default")()
+			local ls = require("luasnip")
 
 			cmp.setup({
 				sorting = defaults.sorting,
@@ -38,12 +40,32 @@ return {
 				},
 				snippet = {
 					expand = function(args)
-						require("luasnip").lsp_expand(args.body)
+						ls.lsp_expand(args.body)
 					end,
 				},
 			})
 
-			local ls = require("luasnip")
+			cmp.setup.cmdline("/", {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = {
+					{ name = "buffer" },
+				},
+			})
+
+			cmp.setup.cmdline(":", {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = cmp.config.sources({
+					{ name = "path" },
+				}, {
+					{
+						name = "cmdline",
+						option = {
+							ignore_cmds = { "Man", "!" },
+						},
+					},
+				}),
+			})
+
 			ls.config.set_config({
 				history = false,
 				updateevents = "TextChanged,TextChangedI",
