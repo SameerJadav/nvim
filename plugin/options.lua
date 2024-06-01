@@ -30,7 +30,7 @@ opt.undofile = true
 
 opt.inccommand = "split"
 
-opt.cursorline = true
+-- opt.cursorline = true
 opt.termguicolors = true
 
 opt.updatetime = 250

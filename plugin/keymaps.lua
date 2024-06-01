@@ -10,9 +10,9 @@ vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv")
 
-vim.keymap.set("n", "<leader>w", ":w<cr>")
-vim.keymap.set("n", "<leader>q", ":q<cr>")
-vim.keymap.set("n", "<leader>x", ":wq<cr>")
+vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { silent = true })
+vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { silent = true })
+vim.keymap.set("n", "<leader>x", "<cmd>wq<cr>", { silent = true })
 
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
