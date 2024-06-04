@@ -1,6 +1,7 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
+		event = { "BufReadPost", "BufNewFile" },
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
@@ -87,7 +88,6 @@ return {
 					map("gd", builtin.lsp_definitions)
 					map("gr", builtin.lsp_references)
 					map("<leader>ds", builtin.lsp_document_symbols)
-					map("<leader>ws", builtin.lsp_workspace_symbols)
 
 					map("K", vim.lsp.buf.hover)
 					map("<leader>rn", vim.lsp.buf.rename)

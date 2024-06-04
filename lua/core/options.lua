@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 vim.g.have_nerd_font = true
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
@@ -30,9 +33,8 @@ opt.undofile = true
 
 opt.inccommand = "split"
 
--- opt.cursorline = true
 opt.termguicolors = true
 
-opt.updatetime = 250
+opt.updatetime = 50
 
 opt.showmode = false

@@ -13,8 +13,6 @@ return {
 				lualine_y = { "progress" },
 				lualine_z = { "location" },
 			},
-			component_separators = { left = "", right = "" },
-			section_separators = { left = "", right = "" },
 		})
 	end,
 }
