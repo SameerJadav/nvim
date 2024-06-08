@@ -1,5 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
+	event = "ColorScheme",
 	dependencies = { { "nvim-tree/nvim-web-devicons", lazy = true } },
 	config = function()
 		require("lualine").setup({
