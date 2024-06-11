@@ -14,6 +14,7 @@ return {
 
 				map("<leader>gc", "<cmd>Git commit<cr>")
 				map("<leader>gp", "<cmd>Git push<cr>")
+				map("<leader>gl", "<cmd>Git log --oneline --decorate --graph<cr>")
 			end,
 		})
 	end,
