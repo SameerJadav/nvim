@@ -4,9 +4,8 @@ return {
 		event = "InsertEnter",
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-cmdline",
+			"hrsh7th/cmp-path",
 
 			{ "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
 			"saadparwaiz1/cmp_luasnip",
@@ -20,12 +19,12 @@ return {
 
 			cmp.setup({
 				sorting = defaults.sorting,
-				sources = {
+				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					{ name = "path" },
 					{ name = "buffer" },
 					{ name = "luasnip" },
-				},
+				}),
 				mapping = {
 					["<C-Space>"] = cmp.mapping.complete(),
 					["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -43,27 +42,6 @@ return {
 						ls.lsp_expand(args.body)
 					end,
 				},
-			})
-
-			cmp.setup.cmdline("/", {
-				mapping = cmp.mapping.preset.cmdline(),
-				sources = {
-					{ name = "buffer" },
-				},
-			})
-
-			cmp.setup.cmdline(":", {
-				mapping = cmp.mapping.preset.cmdline(),
-				sources = cmp.config.sources({
-					{ name = "path" },
-				}, {
-					{
-						name = "cmdline",
-						option = {
-							ignore_cmds = { "Man", "!" },
-						},
-					},
-				}),
 			})
 
 			ls.config.set_config({
