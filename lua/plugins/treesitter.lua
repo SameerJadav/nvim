@@ -1,5 +1,6 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	version = false,
 	build = ":TSUpdate",
 	event = "VeryLazy",
 	lazy = vim.fn.argc(-1) == 0,
@@ -20,6 +21,7 @@ return {
 				"vim",
 				"vimdoc",
 			},
+			auto_install = vim.fn.executable("tree-sitter") > 0,
 			sync_install = false,
 			highlight = { enable = true },
 			indent = { enable = true },

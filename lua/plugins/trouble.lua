@@ -4,7 +4,7 @@ return {
 	opts = {},
 	keys = {
 		{
-			"<C-p>",
+			"<c-p>",
 			"<cmd>Trouble diagnostics toggle focus=true<cr>",
 		},
 	},
