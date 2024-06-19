@@ -45,7 +45,19 @@ return {
 
 		local ensure_installed = vim.list_extend(tools, vim.tbl_keys(servers))
 
-		require("mason").setup()
+		local home = os.getenv("HOME")
+		local install_root_dir = home .. "/.local/bin/mason"
+
+		require("mason").setup({
+			install_root_dir = install_root_dir,
+			ui = {
+				icons = {
+					package_installed = "✓",
+					package_pending = "➜",
+					package_uninstalled = "✗",
+				},
+			},
+		})
 		require("mason-lspconfig").setup()
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
