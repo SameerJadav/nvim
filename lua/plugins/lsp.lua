@@ -29,6 +29,15 @@ return {
 						gofumpt = true,
 						semanticTokens = true,
 						vulncheck = "Imports",
+						hints = {
+							assignVariableTypes = true,
+							compositeLiteralFields = true,
+							compositeLiteralTypes = true,
+							constantValues = true,
+							functionTypeParameters = true,
+							parameterNames = true,
+							rangeVariableTypes = true,
+						},
 					},
 					analyses = {
 						shadow = true,

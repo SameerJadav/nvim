@@ -31,8 +31,8 @@ set("n", "<leader>s", [[:%s/<c-r><c-w>/<c-r><c-w>/g<Left><Left>]])
 set("n", "<leader>sc", [[:%s/<c-r><c-w>/<c-r><c-w>/gc<Left><Left><Left>]])
 
 -- Buffers
-set("n", "<leader>w", "<cmd>w<cr>", { silent = true })
-set("n", "<leader>q", "<cmd>q<cr>", { silent = true })
+set("n", "<leader>w", "<cmd>silent update<cr>", { silent = true })
+set("n", "<leader>q", "<cmd>silent quit<cr>", { silent = true })
 set("n", "<leader>x", "<cmd>wq<cr>", { silent = true })
 
 -- Terminal
@@ -46,3 +46,7 @@ set("n", "<leader>t", function()
 	vim.cmd.term()
 end)
 set("t", "<c-d>", "<c-\\><c-n><cmd>q<cr>")
+
+set("n", "<space>th", function()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })
+end)
