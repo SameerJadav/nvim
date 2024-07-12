@@ -5,7 +5,6 @@ set("n", "<c-c>", "<cmd>nohlsearch<cR>")
 set("i", "<c-c>", "<Esc>")
 
 -- Editing
-set("i", "<c-H>", "<c-W>")
 set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 set("v", "J", ":m '>+1<cr>gv=gv")
@@ -37,15 +36,6 @@ set("n", "<leader>x", "<cmd>wq<cr>", { silent = true })
 
 -- Terminal
 set("n", "<c-f>", "<cmd>silent !tmux neww tmux-sessionizer<cr>")
-set("n", "<leader>t", function()
-	vim.cmd.new()
-	vim.cmd.wincmd("J")
-	vim.api.nvim_win_set_height(0, 12)
-	vim.wo.winfixheight = true
-	vim.cmd.startinsert()
-	vim.cmd.term()
-end)
-set("t", "<c-d>", "<c-\\><c-n><cmd>q<cr>")
 
 set("n", "<space>th", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })

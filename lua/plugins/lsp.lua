@@ -21,6 +21,8 @@ return {
 		local servers = {
 			lua_ls = {},
 			tsserver = {},
+			astro = {},
+			tailwindcss = {},
 			gopls = {
 				settings = {
 					gopls = {
@@ -95,7 +97,6 @@ return {
 				map("gr", builtin.lsp_references)
 				map("<leader>ds", builtin.lsp_document_symbols)
 
-				map("K", vim.lsp.buf.hover)
 				map("<leader>rn", vim.lsp.buf.rename)
 				map("<space>ca", vim.lsp.buf.code_action)
 

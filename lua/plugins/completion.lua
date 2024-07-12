@@ -6,16 +6,12 @@ return {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
-
-			{ "L3MON4D3/LuaSnip", version = "v2.*", build = "make install_jsregexp" },
-			"saadparwaiz1/cmp_luasnip",
 		},
 		config = function()
-			vim.opt.completeopt = { "menu", "menuone", "noselect", "noinsert", "popup" }
+			vim.o.completeopt = "menu,menuone,noselect,noinsert,preview"
 
 			local cmp = require("cmp")
 			local defaults = require("cmp.config.default")()
-			local luasnip = require("luasnip")
 
 			cmp.setup({
 				sorting = defaults.sorting,
@@ -23,7 +19,6 @@ return {
 					{ name = "nvim_lsp" },
 					{ name = "path" },
 					{ name = "buffer" },
-					{ name = "luasnip" },
 				}),
 				mapping = {
 					["<c-space>"] = cmp.mapping.complete(),
@@ -39,27 +34,22 @@ return {
 				},
 				snippet = {
 					expand = function(args)
-						luasnip.lsp_expand(args.body)
+						vim.snippet.expand(args.body)
 					end,
 				},
 			})
 
-			luasnip.config.set_config({
-				history = false,
-				updateevents = "TextChanged,TextChangedI",
-			})
-
-			vim.keymap.set({ "i", "s" }, "<c-k>", function()
-				if luasnip.expand_or_jumpable() then
-					luasnip.expand_or_jump()
+			vim.keymap.set({ "i", "s" }, "<c-l>", function()
+				if vim.snippet.active({ direction = 1 }) then
+					return "<cmd>lua vim.snippet.jump(1)<cr>"
 				end
-			end, { silent = true })
+			end, { expr = true })
 
-			vim.keymap.set({ "i", "s" }, "<c-j>", function()
-				if luasnip.jumpable(-1) then
-					luasnip.jump(-1)
+			vim.keymap.set({ "i", "s" }, "<c-h>", function()
+				if vim.snippet.active({ direction = -1 }) then
+					return "<cmd>lua vim.snippet.jump(-1)<cr>"
 				end
-			end, { silent = true })
+			end, { expr = true })
 		end,
 	},
 }

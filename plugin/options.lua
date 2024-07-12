@@ -33,3 +33,4 @@ opt.undofile = true
 opt.scrolloff = 10
 opt.inccommand = "split"
 opt.updatetime = 50
+opt.splitright = true
