@@ -9,7 +9,7 @@ return {
 		{
 			"<leader>f",
 			function()
-				require("conform").format({ async = true, lsp_fallback = true })
+				require("conform").format({ async = true, lsp_format = "fallback" })
 			end,
 		},
 	},
@@ -24,14 +24,12 @@ return {
 				typescriptreact = { "prettier" },
 				markdown = { "prettier" },
 				json = { "prettier" },
+				c = { "clang-format" },
 			},
-		})
-
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			pattern = "*",
-			callback = function(args)
-				require("conform").format({ bufnr = args.buf, lsp_fallback = true, timeout_ms = 500 })
-			end,
+			format_on_save = {
+				lsp_format = "fallback",
+				timeout_ms = 500,
+			},
 		})
 	end,
 }

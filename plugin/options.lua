@@ -18,7 +18,7 @@ opt.smartcase = true
 opt.signcolumn = "yes"
 opt.termguicolors = true
 opt.showmode = false
-opt.colorcolumn = "80"
+-- opt.colorcolumn = "80"
 
 -- Editing
 opt.tabstop = 4

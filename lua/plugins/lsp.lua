@@ -23,6 +23,7 @@ return {
 			tsserver = {},
 			astro = {},
 			tailwindcss = {},
+			clangd = {},
 			gopls = {
 				settings = {
 					gopls = {
@@ -52,7 +53,7 @@ return {
 			},
 		}
 
-		local tools = { "stylua", "gofumpt", "goimports", "prettier" }
+		local tools = { "stylua", "gofumpt", "goimports", "prettier", "clang-format" }
 
 		local ensure_installed = vim.list_extend(tools, vim.tbl_keys(servers))
 
