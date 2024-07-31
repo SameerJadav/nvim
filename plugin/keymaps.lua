@@ -36,7 +36,3 @@ set("n", "<leader>x", "<cmd>wq<cr>", { silent = true })
 
 -- Terminal
 set("n", "<c-f>", "<cmd>silent !tmux neww tmux-sessionizer<cr>")
-
-set("n", "<space>th", function()
-	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })
-end)

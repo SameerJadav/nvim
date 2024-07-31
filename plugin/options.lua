@@ -5,32 +5,33 @@ vim.g.have_nerd_font = true
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 
-local opt = vim.o
+local o = vim.o
 
 -- UI
-opt.number = true
-opt.relativenumber = true
-opt.wrap = false
-opt.hlsearch = true
-opt.incsearch = true
-opt.ignorecase = true
-opt.smartcase = true
-opt.signcolumn = "yes"
-opt.termguicolors = true
-opt.showmode = false
+o.number = true
+o.relativenumber = true
+o.wrap = false
+o.hlsearch = true
+o.incsearch = true
+o.ignorecase = true
+o.smartcase = true
+o.signcolumn = "yes"
+o.termguicolors = true
+o.showmode = false
 -- opt.colorcolumn = "80"
 
 -- Editing
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
-opt.expandtab = true
-opt.breakindent = true
+o.tabstop = 4
+o.softtabstop = 4
+o.shiftwidth = 4
+o.expandtab = true
+o.smartindent = true
+o.breakindent = true
 
 -- Others
-opt.clipboard = "unnamedplus"
-opt.undofile = true
-opt.scrolloff = 10
-opt.inccommand = "split"
-opt.updatetime = 50
-opt.splitright = true
+o.clipboard = "unnamedplus"
+o.undofile = true
+o.scrolloff = 10
+o.inccommand = "split"
+o.updatetime = 50
+o.splitright = true
