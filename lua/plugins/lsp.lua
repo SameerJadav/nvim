@@ -15,10 +15,11 @@ return {
 	config = function()
 		local servers = {
 			lua_ls = {},
+			tsserver = {},
 			gopls = {
 				settings = {
 					gopls = {
-						usePlaceholders = true,
+						-- usePlaceholders = true,
 						staticcheck = true,
 						gofumpt = true,
 						semanticTokens = true,
@@ -63,12 +64,7 @@ return {
 			},
 		}
 
-		local home = os.getenv("HOME")
-		local install_root_dir = home .. "/.local/bin/mason"
-
-		require("mason").setup({
-			install_root_dir = install_root_dir,
-		})
+		require("mason").setup()
 
 		require("mason-lspconfig").setup({
 			ensure_installed = vim.tbl_keys(servers),

@@ -21,10 +21,10 @@ return {
 					{ name = "buffer" },
 				}),
 				mapping = {
-					["<c-space>"] = cmp.mapping.complete(),
-					["<c-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-					["<c-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-					["<c-y>"] = cmp.mapping(
+					["<C-Space>"] = cmp.mapping.complete(),
+					["<C-N>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+					["<C-P>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+					["<C-Y>"] = cmp.mapping(
 						cmp.mapping.confirm({
 							behavior = cmp.ConfirmBehavior.Insert,
 							select = true,
@@ -39,15 +39,15 @@ return {
 				},
 			})
 
-			vim.keymap.set({ "i", "s" }, "<c-l>", function()
+			vim.keymap.set({ "i", "s" }, "<C-L>", function()
 				if vim.snippet.active({ direction = 1 }) then
-					return "<cmd>lua vim.snippet.jump(1)<cr>"
+					return "<Cmd>lua vim.snippet.jump(1)<CR>"
 				end
 			end, { expr = true })
 
-			vim.keymap.set({ "i", "s" }, "<c-h>", function()
+			vim.keymap.set({ "i", "s" }, "<C-H>", function()
 				if vim.snippet.active({ direction = -1 }) then
-					return "<cmd>lua vim.snippet.jump(-1)<cr>"
+					return "<Cmd>lua vim.snippet.jump(-1)<CR>"
 				end
 			end, { expr = true })
 		end,

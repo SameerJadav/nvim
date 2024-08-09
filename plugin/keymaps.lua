@@ -1,38 +1,50 @@
 local set = vim.keymap.set
 
--- General
-set("n", "<c-c>", "<cmd>nohlsearch<cR>")
-set("i", "<c-c>", "<Esc>")
+set("n", "<C-C>", "<Cmd>nohlsearch<CR>")
+set("i", "<C-C>", "<Esc>")
 
--- Editing
 set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-set("v", "J", ":m '>+1<cr>gv=gv")
-set("v", "K", ":m '<-2<cr>gv=gv")
+
+set("v", "J", ":m '>+1<CR>gv=gv")
+set("v", "K", ":m '<-2<CR>gv=gv")
+
 set("n", "J", "mzJ`z")
 
--- Navigation
-set("n", "<c-d>", "<c-d>zz")
-set("n", "<c-u>", "<c-u>zz")
+set("n", "<leader>p", '"+p')
+set("n", "<leader>P", '"+P')
+set("v", "<leader>p", '"+p')
+
+set("n", "<C-D>", "<C-D>zz")
+set("n", "<C-U>", "<C-U>zz")
+
 set("n", "n", "nzzzv")
 set("n", "N", "Nzzzv")
-set("n", "<c-j>", "<c-w><c-j>")
-set("n", "<c-k>", "<c-w><c-k>")
-set("n", "<c-l>", "<c-w><c-l>")
-set("n", "<c-h>", "<c-w><c-h>")
 
--- Diagnostics
+set("n", "<C-J>", "<C-W><C-J>")
+set("n", "<C-K>", "<C-W><C-K>")
+set("n", "<C-L>", "<C-W><C-L>")
+set("n", "<C-H>", "<C-W><C-H>")
+
+set("n", "<leader>nt", "<Cmd>tabnew<CR>")
+set("n", "H", "<Cmd>tabnext<CR>")
+set("n", "L", "<Cmd>tabprevious<CR>")
+
+set("n", "<leader>vs", "<Cmd>vsplit<CR>")
+set("n", "<leader>hs", "<Cmd>split<CR>")
+set("n", "<C-Up>", "<Cmd>resize -2<CR>")
+set("n", "<C-Down>", "<Cmd>resize +2<CR>")
+set("n", "<C-Left>", "<Cmd>vertical resize +2<CR>")
+set("n", "<C-Right>", "<Cmd>vertical resize -2<CR>")
+
 set("n", "[d", vim.diagnostic.goto_prev)
 set("n", "]d", vim.diagnostic.goto_next)
 
--- Search and Replace
-set("n", "<leader>s", [[:%s/<c-r><c-w>/<c-r><c-w>/g<Left><Left>]])
-set("n", "<leader>sc", [[:%s/<c-r><c-w>/<c-r><c-w>/gc<Left><Left><Left>]])
+set("n", "<leader>s", [[:%s/<C-R><C-W>/<C-R><C-W>/g<Left><Left>]])
+set("n", "<leader>sc", [[:%s/<C-R><C-W>/<C-R><C-W>/gc<Left><Left><Left>]])
 
--- Buffers
-set("n", "<leader>w", "<cmd>silent update<cr>", { silent = true })
-set("n", "<leader>q", "<cmd>silent quit<cr>", { silent = true })
-set("n", "<leader>x", "<cmd>wq<cr>", { silent = true })
+set("n", "<leader>w", "<Cmd>silent update<CR>", { silent = true })
+set("n", "<leader>q", "<Cmd>silent quit<CR>", { silent = true })
+set("n", "<leader>x", "<Cmd>wq<CR>", { silent = true })
 
--- Terminal
-set("n", "<c-f>", "<cmd>silent !tmux neww tmux-sessionizer<cr>")
+set("n", "<C-F>", "<Cmd>silent !tmux neww tmux-sessionizer<CR>")
