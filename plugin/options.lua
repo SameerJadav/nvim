@@ -1,4 +1,3 @@
--- Global variables
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
@@ -7,7 +6,6 @@ vim.g.netrw_banner = 0
 
 local o = vim.o
 
--- UI
 o.number = true
 o.relativenumber = true
 o.wrap = false
@@ -18,9 +16,8 @@ o.smartcase = true
 o.signcolumn = "yes"
 o.termguicolors = true
 o.showmode = false
--- opt.colorcolumn = "80"
+o.colorcolumn = "80"
 
--- Editing
 o.tabstop = 4
 o.softtabstop = 4
 o.shiftwidth = 4
@@ -28,7 +25,6 @@ o.expandtab = true
 o.smartindent = true
 o.breakindent = true
 
--- Others
 o.clipboard = "unnamedplus"
 o.undofile = true
 o.scrolloff = 10

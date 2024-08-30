@@ -8,10 +8,10 @@ return {
 			theme = "auto",
 			sections = {
 				lualine_a = { "mode" },
-				lualine_b = { "branch", "diagnostics" },
-				lualine_c = { "filename" },
+				lualine_b = { "filename" },
+				lualine_c = { "diagnostics" },
 				lualine_x = { "diff" },
-				lualine_y = { "progress" },
+				lualine_y = { "branch" },
 				lualine_z = { "location" },
 			},
 		})

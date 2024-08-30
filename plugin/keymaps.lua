@@ -27,8 +27,8 @@ set("n", "<C-L>", "<C-W><C-L>")
 set("n", "<C-H>", "<C-W><C-H>")
 
 set("n", "<leader>nt", "<Cmd>tabnew<CR>")
-set("n", "H", "<Cmd>tabnext<CR>")
-set("n", "L", "<Cmd>tabprevious<CR>")
+set("n", "L", "<Cmd>tabnext<CR>")
+set("n", "H", "<Cmd>tabprevious<CR>")
 
 set("n", "<leader>vs", "<Cmd>vsplit<CR>")
 set("n", "<leader>hs", "<Cmd>split<CR>")
@@ -43,8 +43,8 @@ set("n", "]d", vim.diagnostic.goto_next)
 set("n", "<leader>s", [[:%s/<C-R><C-W>/<C-R><C-W>/g<Left><Left>]])
 set("n", "<leader>sc", [[:%s/<C-R><C-W>/<C-R><C-W>/gc<Left><Left><Left>]])
 
-set("n", "<leader>w", "<Cmd>silent update<CR>", { silent = true })
-set("n", "<leader>q", "<Cmd>silent quit<CR>", { silent = true })
-set("n", "<leader>x", "<Cmd>wq<CR>", { silent = true })
+set("n", "<leader>w", "<Cmd>update<CR>")
+set("n", "<leader>q", "<Cmd>quit<CR>")
+set("n", "<leader>x", "<Cmd>wq<CR>")
 
 set("n", "<C-F>", "<Cmd>silent !tmux neww tmux-sessionizer<CR>")

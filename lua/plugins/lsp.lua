@@ -102,6 +102,12 @@ return {
 				map("<leader>rn", vim.lsp.buf.rename)
 				map("<space>ca", vim.lsp.buf.code_action)
 
+				map("<leader>lr", "<Cmd>LspRestart<CR>")
+				map("<leader>li", "<Cmd>LspInstall<CR>")
+				map("<leader>lI", "<Cmd>LspInfo<CR>")
+				map("<leader>ls", "<Cmd>LspStart<CR>")
+				map("<leader>lS", "<Cmd>LspStop<CR>")
+
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
 				if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
 					map("<leader>th", function()

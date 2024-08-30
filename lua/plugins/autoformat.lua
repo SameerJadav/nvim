@@ -22,8 +22,10 @@ return {
 				javascriptreact = { "prettier" },
 				typescript = { "prettier" },
 				typescriptreact = { "prettier" },
+				-- astro = { "prettier" },
 				markdown = { "prettier" },
 				json = { "prettier" },
+				html = { "prettier" },
 				c = { "clang-format" },
 			},
 			format_on_save = {

@@ -34,21 +34,27 @@ return {
 		require("telescope").load_extension("fzf")
 		require("telescope").load_extension("ui-select")
 
+		local map = function(keys, func)
+			vim.keymap.set("n", keys, func)
+		end
+
 		local builtin = require("telescope.builtin")
 
-		vim.keymap.set("n", "<leader>sf", builtin.find_files)
-		vim.keymap.set("n", "<leader>sh", builtin.help_tags)
-		vim.keymap.set("n", "<leader>sk", builtin.keymaps)
-		vim.keymap.set("n", "<leader>sd", builtin.diagnostics)
+		map("<leader>sf", builtin.find_files)
+		map("<leader>sh", builtin.help_tags)
+		map("<leader>sk", builtin.keymaps)
+		map("<leader>sd", builtin.diagnostics)
+		map("<leader>ss", builtin.spell_suggest)
 
-		vim.keymap.set("n", "<leader>sn", function()
-			builtin.find_files({ cwd = vim.fn.stdpath("config") })
-		end)
-		vim.keymap.set("n", "<leader>df", function()
+		map("<leader>df", function()
 			builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({ previewer = false }))
 		end)
-		vim.keymap.set("n", "<leader>wf", function()
+		map("<leader>wf", function()
 			builtin.live_grep(require("telescope.themes").get_dropdown({ previewer = false }))
+		end)
+
+		map("<leader>sn", function()
+			builtin.find_files({ cwd = vim.fn.stdpath("config") })
 		end)
 	end,
 }
