@@ -7,6 +7,7 @@ return {
 		vim.cmd("colorscheme tokyonight-night")
 	end,
 }
+
 -- return {
 -- 	"navarasu/onedark.nvim",
 -- 	lazy = false,

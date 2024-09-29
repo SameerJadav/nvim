@@ -16,7 +16,6 @@ o.smartcase = true
 o.signcolumn = "yes"
 o.termguicolors = true
 o.showmode = false
-o.colorcolumn = "80"
 
 o.tabstop = 4
 o.softtabstop = 4
@@ -31,3 +30,10 @@ o.scrolloff = 10
 o.inccommand = "split"
 o.updatetime = 50
 o.splitright = true
+
+vim.diagnostic.config({
+	underline = true,
+	severity_sort = true,
+	update_in_insert = false,
+	virtual_text = { source = "if_many", prefix = "󰝤", spacing = 4 },
+})

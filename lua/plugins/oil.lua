@@ -10,6 +10,6 @@ return {
 				show_hidden = true,
 			},
 		})
-		vim.keymap.set("n", "<leader>e", "<Cmd>Oil<CR>")
+		require("utils").map("n", "<leader>e", "<Cmd>Oil<CR>")
 	end,
 }

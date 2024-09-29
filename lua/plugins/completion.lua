@@ -19,6 +19,7 @@ return {
 					{ name = "nvim_lsp" },
 					{ name = "path" },
 					{ name = "buffer" },
+					{ name = "lazydev", group_index = 0 },
 				}),
 				mapping = {
 					["<C-Space>"] = cmp.mapping.complete(),
@@ -39,13 +40,15 @@ return {
 				},
 			})
 
-			vim.keymap.set({ "i", "s" }, "<C-L>", function()
+			local map = require("utils").map
+
+			map({ "i", "s" }, "<C-L>", function()
 				if vim.snippet.active({ direction = 1 }) then
 					return "<Cmd>lua vim.snippet.jump(1)<CR>"
 				end
 			end, { expr = true })
 
-			vim.keymap.set({ "i", "s" }, "<C-H>", function()
+			map({ "i", "s" }, "<C-H>", function()
 				if vim.snippet.active({ direction = -1 }) then
 					return "<Cmd>lua vim.snippet.jump(-1)<CR>"
 				end
