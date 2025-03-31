@@ -1,13 +1,18 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	event = "VimEnter",
 	branch = "0.1.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
+
 		"nvim-telescope/telescope-ui-select.nvim",
+		{
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
+		},
+
 		{ "nvim-tree/nvim-web-devicons", lazy = true },
-		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
+	event = "VimEnter",
 	config = function()
 		local vimgrep_arguments = { unpack(require("telescope.config").values.vimgrep_arguments) }
 
@@ -25,6 +30,12 @@ return {
 				},
 			},
 			extensions = {
+				fzf = {
+					fuzzy = true,
+					override_generic_sorter = true,
+					override_file_sorter = true,
+					case_mode = "smart_case",
+				},
 				["ui-select"] = {
 					require("telescope.themes").get_dropdown(),
 				},
@@ -41,7 +52,6 @@ return {
 		map("n", "<leader>sf", builtin.find_files)
 		map("n", "<leader>sh", builtin.help_tags)
 		map("n", "<leader>sk", builtin.keymaps)
-		map("n", "<leader>sd", builtin.diagnostics)
 		map("n", "<leader>ss", builtin.spell_suggest)
 
 		map("n", "<leader>df", function()
@@ -53,6 +63,10 @@ return {
 
 		map("n", "<leader>sn", function()
 			builtin.find_files({ cwd = vim.fn.stdpath("config") })
+		end)
+
+		map("n", "<leader>sp", function()
+			builtin.find_files({ cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy") })
 		end)
 	end,
 }

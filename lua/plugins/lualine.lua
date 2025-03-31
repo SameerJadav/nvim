@@ -11,16 +11,39 @@ return {
 		end
 	end,
 	config = function()
+		local theme = {}
+
+		local modes = {
+			"normal",
+			"insert",
+			"visual",
+			"replace",
+			"command",
+			"inactive",
+			"terminal",
+		}
+
+		for _, mode in ipairs(modes) do
+			theme[mode] = {
+				a = { bg = "#eeeeee", fg = "#111111", gui = "bold" },
+				b = { bg = "#222222", fg = "#eeeeee" },
+				c = { bg = "#191919", fg = "#eeeeee" },
+			}
+		end
+
 		require("lualine").setup({
-			icons_enabled = true,
-			theme = "auto",
+			options = {
+				theme = theme,
+				section_separators = "",
+				component_separators = "",
+			},
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = { "filename" },
 				lualine_c = { "diagnostics" },
-				lualine_x = { "diff" },
-				lualine_y = { "branch" },
-				lualine_z = { "location" },
+				lualine_x = { "" },
+				lualine_y = { "diff" },
+				lualine_z = { { "branch", icons_enabled = false } },
 			},
 		})
 	end,

@@ -3,13 +3,12 @@ return {
 	dependencies = { { "nvim-tree/nvim-web-devicons", lazy = true } },
 	config = function()
 		require("oil").setup({
-			columns = { "icon" },
 			delete_to_trash = true,
 			skip_confirm_for_simple_edits = true,
 			view_options = {
 				show_hidden = true,
 			},
 		})
-		require("utils").map("n", "<leader>e", "<Cmd>Oil<CR>")
+		require("utils").map("n", "-", "<Cmd>Oil<CR>")
 	end,
 }
