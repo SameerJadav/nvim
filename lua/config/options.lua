@@ -20,6 +20,7 @@ opt.termguicolors = true
 opt.showmode = false
 opt.wrap = false
 opt.scrolloff = 10
+opt.colorcolumn = "80"
 
 opt.splitbelow = true
 opt.splitright = true
@@ -38,12 +39,5 @@ vim.diagnostic.config({
 	underline = false,
 	virtual_text = true,
 	severity_sort = true,
-	signs = {
-		text = {
-			[vim.diagnostic.severity.ERROR] = "",
-			[vim.diagnostic.severity.WARN] = "",
-			[vim.diagnostic.severity.HINT] = "",
-			[vim.diagnostic.severity.INFO] = "",
-		},
-	},
+	signs = false,
 })

@@ -14,3 +14,10 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.o.spelloptions = "camel"
 	end,
 })
+
+vim.api.nvim_create_autocmd("LspProgress", {
+	pattern = "*",
+	callback = function()
+		print("LSP: " .. vim.lsp.status())
+	end,
+})
